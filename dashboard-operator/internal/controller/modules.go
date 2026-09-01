@@ -119,6 +119,18 @@ var moduleRegistry = map[string]ModuleDefinition{
 		ManifestSlug:  "notebooks",
 		TLS:           false,
 	},
+	"dataConnectHub": {
+		Name:          "dataConnectHub",
+		ContainerName: "data-connect-hub-ui",
+		Port:          9143,
+		ImageEnvVar:   "RELATED_IMAGE_ODH_MOD_ARCH_DATA_CONNECT_HUB_IMAGE",
+		ManifestSlug:  "data-connect-hub",
+		TLS:           true,
+		ProxyPaths: []proxyRoute{
+			{Path: "/data-connect-hub/api", PathRewrite: "/api"},
+			{Path: "/data-connect-hub/healthcheck", PathRewrite: "/healthcheck"},
+		},
+	},
 }
 
 // resolveModuleStatuses determines the status of each module based on
