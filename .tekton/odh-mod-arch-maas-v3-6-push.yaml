@@ -12,8 +12,8 @@ metadata:
     pipelinesascode.tekton.dev/on-cel-expression: |
       event == "push"
       && target_branch == "rhoai-3.6"
-      && ( "packages/maas/**".pathChanged() || "prefetch/pnpm/**".pathChanged()
-      || ".tekton/odh-mod-arch-maas-v3-6-push.yaml".pathChanged()
+      && ( "packages/maas/**".pathChanged() || "prefetch/pnpm/**".pathChanged() 
+      || ".tekton/odh-mod-arch-maas-v3-6-push.yaml".pathChanged() 
       || "Dockerfile.konflux.maas".pathChanged() )
   labels:
     appstudio.openshift.io/application: rhoai-v3-6

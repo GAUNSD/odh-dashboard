@@ -13,8 +13,8 @@ metadata:
     pipelinesascode.tekton.dev/on-cel-expression: |
       event == "push"
       && target_branch == "rhoai-3.6"
-      && ( "packages/gen-ai/**".pathChanged() || "prefetch/pnpm/**".pathChanged()
-      || ".tekton/odh-mod-arch-gen-ai-v3-6-push.yaml".pathChanged()
+      && ( "packages/gen-ai/**".pathChanged() || "prefetch/pnpm/**".pathChanged() 
+      || ".tekton/odh-mod-arch-gen-ai-v3-6-push.yaml".pathChanged() 
       || "Dockerfile.konflux.genai".pathChanged() )
   labels:
     appstudio.openshift.io/application: rhoai-v3-6
